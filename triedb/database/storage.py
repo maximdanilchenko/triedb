@@ -116,8 +116,8 @@ class TrieStorage:
             return None
 
     def wpget(self, *args):
-        self.check_length(1, b'WPGET', *args)
         """ Get all key/value keys where word is prefix """
+        self.check_length(1, b'WPGET', *args)
         try:
             return list(chain(*self._store.items(args[0] or None)))
         except TypeError:
